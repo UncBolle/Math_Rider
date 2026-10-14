@@ -16,7 +16,7 @@ Math_Rider ist ein Mathe-Lernspiel für Grundschulkinder (Plus und Minus im Zahl
 Hol dir vorher die Zustimmung des Nutzers bei:
 
 - neuen Abhängigkeiten oder Bibliotheken (Ausnahme: Vitest ist bereits erlaubt),
-- Änderungen an Spielmechanik, Aufgabenregeln oder Highscore, also an allem, was in SPIELDESIGN.md steht,
+- Änderungen an Spielmechanik, Aufgabenregeln oder Highscore, also an allem, was in SPIELDESIGN.md steht (Ausnahme: neue Hindernisse, die zum Thema der Figur passen, ergänzt du direkt),
 - neuen Ordnern oder Umbau der Struktur,
 - Löschen von Dateien oder Funktionen.
 
