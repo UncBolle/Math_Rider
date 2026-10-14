@@ -2,19 +2,7 @@
 
 Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im Sinne von [AGENTS.md](AGENTS.md): fertig, wenn ihre Kriterien erfüllt sind, dann ein Commit. Erledigte Aufgaben abhaken (`[x]`). Die Test-IDs verweisen auf [TESTFAELLE.md](TESTFAELLE.md), die Regeln auf [SPIELDESIGN.md](SPIELDESIGN.md).
 
-## Annahmen (vom Nutzer zu bestätigen)
-
-Diese Punkte lässt SPIELDESIGN.md offen; der Plan geht von folgenden Antworten aus:
-
-1. Sind Plus und Minus beide möglich, kommt jede mit Wahrscheinlichkeit 1/2; die Aufgabenzahl ist im erlaubten Bereich gleichverteilt.
-2. „Die ersten 5 Aufgaben“ sind die Aufgaben Nummer 1 bis 5 eines Laufs.
-3. Läufe mit 0 Punkten kommen nicht in die Bestenliste.
-4. Bei gleicher Punktzahl steht der ältere Eintrag in der Bestenliste vorn.
-5. Der zuletzt eingegebene Name ist beim nächsten Besuch vorausgefüllt.
-
 ## Aufbau
-
-Vorgeschlagene Struktur (neue Ordner, daher mit T1 zur Zustimmung):
 
 - `src/logik/`: reine Spiellogik ohne DOM, vollständig mit Vitest getestet. Jede Funktion, die würfelt, bekommt die Zufallsquelle als Parameter (`zufall: () => number`), damit Tests mit festem Startwert reproduzierbar sind.
 - `src/ansicht/`: Bildschirme und Eingabe (DOM).
