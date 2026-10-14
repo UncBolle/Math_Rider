@@ -6,10 +6,10 @@ export function zeigeNameBildschirm(
   letzterName: string,
   weiter: (name: string) => void,
 ): void {
-  const bildschirm = element("div", "bildschirm start");
+  const bildschirm = element("div", "bildschirm menue start");
   const titel = element("h1", "titel", "Math Rider");
 
-  const formular = element("form");
+  const formular = element("form", "glas");
   formular.noValidate = true;
   const beschriftung = element("label", undefined, "Wie heißt du?");
   const eingabe = element("input");

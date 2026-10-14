@@ -10,9 +10,9 @@ export function zeigeErgebnisBildschirm(
   platz: number | null,
   nochmal: () => void,
 ): void {
-  const bildschirm = element("div", "bildschirm ergebnis");
+  const bildschirm = element("div", "bildschirm menue ergebnis");
 
-  const zusammenfassung = element("div", "karte zusammenfassung");
+  const zusammenfassung = element("div", "glas zusammenfassung");
   const ueberschrift = element("h2", undefined, punkte > 0 ? `Super, ${name}!` : `Fast, ${name}!`);
   const punkteText = element("p", "punkte", punkte === 1 ? "Aufgabe geschafft" : "Aufgaben geschafft");
   punkteText.prepend(element("strong", undefined, String(punkte)));
@@ -35,7 +35,7 @@ function platzMeldung(punkte: number, platz: number | null): string {
 }
 
 function baueBestenliste(liste: readonly Eintrag[], platz: number | null): HTMLElement {
-  const karte = element("div", "karte bestenliste");
+  const karte = element("div", "glas bestenliste");
   karte.append(element("h3", undefined, "Bestenliste"));
 
   if (liste.length === 0) {

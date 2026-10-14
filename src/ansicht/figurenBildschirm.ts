@@ -8,12 +8,12 @@ export function zeigeFigurenBildschirm(
   signal: AbortSignal,
   weiter: (figur: Figur) => void,
 ): void {
-  const bildschirm = element("div", "bildschirm figurenwahl");
+  const bildschirm = element("div", "bildschirm menue figurenwahl");
   const frage = element("h2", undefined, `Hallo ${name}! Wähle deine Figur:`);
   const auswahl = element("div", "auswahl");
 
   const knoepfe = FIGUREN.map((figur) => {
-    const knopf = element("button");
+    const knopf = element("button", `glas wahl-${figur}`);
     knopf.type = "button";
     const bild = element("img");
     bild.src = FIGUR_BILD[figur];

@@ -1,13 +1,17 @@
 /* Nur Systemschriften: nichts wird von fremden Servern geladen */
 :root {
-  --schrift: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
-  --tinte: #1d2340;
-  --hell: #ffffff;
-  --akzent: #ff7a3d;
-  --akzent-dunkel: #d9541a;
-  --richtig: #2e9d4e;
-  --falsch: #d93a3a;
-  --karte: #ffffffee;
+  --schrift: ui-rounded, "SF Pro Rounded", "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system,
+    Roboto, sans-serif;
+  --weiss: #ffffff;
+  --tinte: #141a3a;
+  --orange: #ff8a3d;
+  --pink: #ff4f9a;
+  --tuerkis: #45f0ff;
+  --gold: #ffd34d;
+  --gruen: #3dffa0;
+  --rot: #ff4d6a;
+  --neon: var(--orange);
+  --neon-schein: rgba(255, 138, 61, 0.65);
 }
 
 * {
@@ -19,8 +23,8 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background: #1a1f3d;
-  color: var(--tinte);
+  background: #04061a;
+  color: var(--weiss);
   font-family: var(--schrift);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -41,7 +45,7 @@ body {
   height: 720px;
   transform-origin: 0 0;
   overflow: hidden;
-  background: linear-gradient(160deg, #6ec6ff 0%, #b388ff 100%);
+  background: #04061a;
 }
 
 .bildschirm {
@@ -54,87 +58,158 @@ button {
   cursor: pointer;
 }
 
+/* ---------- Menüs: Nebel, Sterne, Glas ---------- */
+
+.menue {
+  background:
+    radial-gradient(ellipse 45% 55% at 18% 22%, rgba(150, 70, 220, 0.5), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 30%, rgba(30, 170, 230, 0.4), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 50% 115%, rgba(255, 110, 60, 0.45), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 60% 5%, rgba(240, 90, 170, 0.3), transparent 70%),
+    linear-gradient(180deg, #04061a 0%, #0c1440 60%, #1c2466 100%);
+}
+
+.menue::before {
+  content: "";
+  position: absolute;
+  inset: -240px 0 0 0;
+  background-image:
+    radial-gradient(2px 2px at 30px 40px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 150px 90px, #ffe7b0, transparent),
+    radial-gradient(2px 2px at 210px 200px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 90px 170px, #b3e5fc, transparent),
+    radial-gradient(1px 1px at 190px 20px, #fff, transparent),
+    radial-gradient(3px 3px at 60px 230px, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 240px 240px;
+  animation: sternenflug 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sternenflug {
+  to {
+    transform: translateY(240px);
+  }
+}
+
+.glas {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 36px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.titel {
+  margin: 0;
+  font-size: 104px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 30%, #ffd34d 70%, #ff8a3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(255, 138, 61, 0.7)) drop-shadow(0 6px 0 rgba(60, 20, 120, 0.8));
+}
+
 .knopf {
   border: none;
-  border-radius: 28px;
-  padding: 18px 48px;
+  border-radius: 999px;
+  padding: 20px 64px;
   font-size: 44px;
-  font-weight: bold;
-  color: var(--hell);
-  background: var(--akzent);
-  box-shadow: 0 8px 0 var(--akzent-dunkel);
-  transition: transform 0.1s, box-shadow 0.1s;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--weiss);
+  background: linear-gradient(135deg, #ffb347 0%, #ff8a3d 40%, #ff4f9a 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -6px 0 rgba(150, 20, 80, 0.35),
+    0 12px 32px rgba(255, 79, 154, 0.45),
+    0 0 48px rgba(255, 138, 61, 0.45);
+  text-shadow: 0 2px 6px rgba(120, 20, 60, 0.5);
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+
+.knopf:hover {
+  transform: translateY(-3px) scale(1.03);
 }
 
 .knopf:active {
-  transform: translateY(6px);
-  box-shadow: 0 2px 0 var(--akzent-dunkel);
+  transform: translateY(2px) scale(0.98);
 }
 
 .knopf:focus-visible,
 .figurenwahl button:focus-visible,
 .loesung:focus-visible {
-  outline: 6px solid #ffe14d;
-  outline-offset: 6px;
+  outline: 5px solid var(--tuerkis);
+  outline-offset: 8px;
 }
 
-.titel {
-  margin: 0;
-  font-size: 96px;
-  color: var(--hell);
-  text-shadow: 0 6px 0 #3d2b8f;
-  letter-spacing: 2px;
-}
+/* ---------- Startbildschirm: Name ---------- */
 
-/* Startbildschirm: Name */
 .start {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 34px;
 }
 
 .start form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  background: var(--karte);
-  padding: 36px 56px;
-  border-radius: 36px;
+  gap: 22px;
+  padding: 40px 64px 44px;
 }
 
 .start label {
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .start input {
-  width: 560px;
+  width: 580px;
   font-family: inherit;
-  font-size: 48px;
-  padding: 12px 24px;
-  border: 5px solid #b388ff;
-  border-radius: 20px;
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--weiss);
+  padding: 14px 28px;
+  border: 2.5px solid rgba(120, 210, 255, 0.4);
+  border-radius: 24px;
+  background: rgba(4, 8, 32, 0.55);
   text-align: center;
   user-select: text;
   -webkit-user-select: text;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .start input:focus {
   outline: none;
-  border-color: var(--akzent);
+  border-color: var(--tuerkis);
+  box-shadow:
+    0 0 0 5px rgba(69, 240, 255, 0.2),
+    0 0 36px rgba(69, 240, 255, 0.45);
 }
 
 .hinweis {
   min-height: 40px;
   margin: 0;
-  font-size: 32px;
-  color: var(--falsch);
+  font-size: 30px;
+  font-weight: 700;
+  color: #ff9cb0;
 }
 
-/* Figurenwahl */
+/* ---------- Figurenwahl ---------- */
+
 .figurenwahl {
   display: flex;
   flex-direction: column;
@@ -146,245 +221,387 @@ button {
 .figurenwahl h2 {
   margin: 0;
   font-size: 56px;
-  color: var(--hell);
-  text-shadow: 0 4px 0 #3d2b8f;
+  font-weight: 900;
+  text-shadow: 0 0 24px rgba(69, 240, 255, 0.5);
 }
 
 .figurenwahl .auswahl {
   display: flex;
-  gap: 80px;
+  gap: 72px;
 }
 
 .figurenwahl button {
-  width: 400px;
-  height: 420px;
+  width: 420px;
+  height: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  border: none;
-  border-radius: 40px;
-  background: var(--karte);
-  box-shadow: 0 10px 0 #7e57c2;
-  font-size: 40px;
-  font-weight: bold;
-  color: var(--tinte);
-  transition: transform 0.15s;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 0 24px 34px;
+  color: var(--weiss);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s,
+    border-color 0.18s;
 }
 
-.figurenwahl button:hover {
-  transform: scale(1.04);
+.figurenwahl button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  width: 260px;
+  height: 46px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--sockel, rgba(255, 138, 61, 0.8)), transparent);
+}
+
+.figurenwahl button.wahl-prinzessin {
+  --sockel: rgba(69, 240, 255, 0.8);
+}
+
+.figurenwahl button:hover,
+.figurenwahl button:focus-visible {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(255, 138, 61, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .figurenwahl button img {
+  position: relative;
   height: 280px;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45));
+  animation: schweben 3s ease-in-out infinite;
 }
 
-/* Spielszene */
-.szene {
-  overflow: hidden;
+.figurenwahl button.wahl-prinzessin img {
+  animation-delay: -1.5s;
 }
 
-.szene .hintergrund {
-  position: absolute;
-  inset: -720px 0 0 0;
-  animation: fahren 1.2s linear infinite;
-  animation-play-state: paused;
-}
-
-.szene.in-fahrt .hintergrund {
-  animation-play-state: running;
-}
-
-@keyframes fahren {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(240px);
+@keyframes schweben {
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-.thema-weltraum {
-  background: radial-gradient(ellipse at 50% 120%, #3b2a7a 0%, #0b1030 70%);
-}
-
-.thema-weltraum .hintergrund {
-  background-image:
-    radial-gradient(3px 3px at 40px 60px, #fff, transparent),
-    radial-gradient(2px 2px at 180px 20px, #ffe9a8, transparent),
-    radial-gradient(3px 3px at 120px 170px, #fff, transparent),
-    radial-gradient(2px 2px at 220px 120px, #b3e5fc, transparent),
-    radial-gradient(2px 2px at 20px 200px, #fff, transparent);
-  background-size: 240px 240px;
-}
+/* ---------- Spielszene ---------- */
 
 .thema-maerchenland {
-  background: #8bd16a;
+  --neon: var(--tuerkis);
+  --neon-schein: rgba(69, 240, 255, 0.65);
 }
 
-.thema-maerchenland .hintergrund {
-  background-image:
-    linear-gradient(90deg, transparent 33%, #f3d9a4 33%, #f3d9a4 67%, transparent 67%),
-    radial-gradient(10px 10px at 60px 60px, #ff8fc7 60%, transparent 61%),
-    radial-gradient(10px 10px at 1180px 150px, #fff59d 60%, transparent 61%),
-    radial-gradient(8px 8px at 200px 200px, #ffffff 60%, transparent 61%),
-    radial-gradient(8px 8px at 1060px 40px, #ff8fc7 60%, transparent 61%),
-    linear-gradient(90deg, transparent 49%, #e6c584 49%, #e6c584 51%, transparent 51%);
-  background-size:
-    100% 100%,
-    1280px 240px,
-    1280px 240px,
-    1280px 240px,
-    1280px 240px,
-    100% 120px;
+.kulisse {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
 }
 
 .anzeige {
   position: absolute;
-  top: 20px;
-  left: 28px;
-  right: 28px;
+  top: 18px;
+  left: 24px;
+  right: 24px;
   display: flex;
   justify-content: space-between;
-  font-size: 36px;
-  font-weight: bold;
-  color: var(--hell);
-  text-shadow: 0 3px 0 #0008;
   z-index: 5;
+  pointer-events: none;
+}
+
+.pille {
+  padding: 8px 26px;
+  border-radius: 999px;
+  font-size: 34px;
+  font-weight: 800;
+  background: rgba(8, 12, 40, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.punkte-pille {
+  color: var(--gold);
+  text-shadow: 0 0 14px rgba(255, 211, 77, 0.7);
 }
 
 .figur {
   position: absolute;
-  left: 540px;
-  top: 470px;
-  width: 200px;
-  height: 230px;
+  left: 545px;
+  top: 490px;
+  width: 190px;
+  height: 225px;
   z-index: 3;
 }
 
+.figur-koerper {
+  position: absolute;
+  inset: 0;
+}
+
+.figur.in-fahrt .figur-koerper {
+  animation: wippen 0.5s ease-in-out infinite;
+}
+
+@keyframes wippen {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 .figur img {
+  position: relative;
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.4));
+}
+
+.figur-schatten {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: -6px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--neon-schein), transparent);
+}
+
+.flamme {
+  position: absolute;
+  left: 50%;
+  top: 88%;
+  width: 64px;
+  height: 90px;
+  margin-left: -32px;
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  background: radial-gradient(ellipse at 50% 25%, #fffbe0 0%, #ffc24d 35%, #ff5a1f 70%, transparent 72%);
+  filter: blur(2px);
+  transform-origin: 50% 0;
+  animation: flackern 0.12s ease-in-out infinite alternate;
+}
+
+@keyframes flackern {
+  from {
+    transform: scaleY(0.8) scaleX(1.05);
+    opacity: 0.85;
+  }
+  to {
+    transform: scaleY(1.15) scaleX(0.95);
+    opacity: 1;
+  }
 }
 
 .zahl {
   position: absolute;
   left: 50%;
-  width: 84px;
-  height: 84px;
-  margin-left: -42px;
-  margin-top: -42px;
+  width: 76px;
+  height: 76px;
+  margin-left: -38px;
+  margin-top: -38px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--hell);
-  border: 5px solid var(--tinte);
-  font-size: 44px;
-  font-weight: bold;
+  background: radial-gradient(circle at 35% 28%, #ffffff 0%, #e8eeff 55%, #b6c3ee 100%);
+  border: 4px solid var(--weiss);
+  box-shadow:
+    0 0 0 4px var(--neon),
+    0 0 28px var(--neon-schein),
+    0 6px 12px rgba(0, 0, 0, 0.35);
+  font-size: 40px;
+  font-weight: 900;
   color: var(--tinte);
 }
 
 .figur-rakete .zahl {
-  top: 48%;
+  top: 58%;
 }
 
 .figur-prinzessin .zahl {
-  top: 72%;
+  top: 64%;
 }
 
 .hindernis-gruppe {
   position: absolute;
   left: 0;
-  top: 110px;
-  width: 1280px;
-  height: 280px;
-  z-index: 2;
-}
-
-.aufgabe {
-  position: absolute;
-  left: 490px;
   top: 0;
-  width: 300px;
-  height: 90px;
-  display: grid;
-  place-items: center;
-  border-radius: 24px;
-  background: #ffe14d;
-  border: 5px solid var(--tinte);
-  font-size: 60px;
-  font-weight: bold;
+  width: 1280px;
+  height: 420px;
+  transform-origin: 640px 300px;
+  z-index: 2;
+  will-change: transform;
 }
 
 .hindernis {
   position: absolute;
-  left: 510px;
-  top: 110px;
-  width: 260px;
-  height: 160px;
+  left: 490px;
+  top: 94px;
+  width: 300px;
+  height: 220px;
 }
 
 .loesung {
   position: absolute;
-  top: 120px;
+  top: 136px;
   width: 200px;
-  height: 130px;
-  border: 6px solid var(--tinte);
-  border-radius: 32px;
-  background: var(--hell);
-  box-shadow: 0 8px 0 #0005;
-  font-size: 68px;
-  font-weight: bold;
-  color: var(--tinte);
+  height: 132px;
+  border: 3px solid var(--neon);
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(40, 48, 110, 0.9), rgba(10, 14, 44, 0.92));
+  box-shadow:
+    0 0 26px var(--neon-schein),
+    inset 0 2px 0 rgba(255, 255, 255, 0.25),
+    inset 0 0 24px rgba(255, 255, 255, 0.06),
+    0 18px 30px rgba(0, 0, 0, 0.45);
+  font-size: 76px;
+  font-weight: 900;
+  color: var(--weiss);
+  text-shadow: 0 0 16px var(--neon-schein);
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.loesung::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -40px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--neon-schein), transparent);
 }
 
 .loesung.links {
-  left: 270px;
+  left: 240px;
 }
 
 .loesung.rechts {
-  left: 810px;
+  left: 840px;
+}
+
+.loesung.gewaehlt {
+  transform: scale(1.06);
 }
 
 .loesung.richtig {
-  background: var(--richtig);
-  color: var(--hell);
+  --neon: var(--gruen);
+  --neon-schein: rgba(61, 255, 160, 0.75);
+  background: linear-gradient(180deg, rgba(30, 150, 100, 0.95), rgba(8, 70, 50, 0.95));
 }
 
 .loesung.falsch {
-  background: var(--falsch);
-  color: var(--hell);
+  --neon: var(--rot);
+  --neon-schein: rgba(255, 77, 106, 0.75);
+  background: linear-gradient(180deg, rgba(170, 30, 60, 0.95), rgba(80, 10, 30, 0.95));
+}
+
+.aufgabe {
+  position: absolute;
+  left: 515px;
+  top: 318px;
+  width: 250px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #fffbe6 0%, #ffe066 45%, #ffb020 100%);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 0 4px rgba(255, 176, 32, 0.55),
+    0 0 46px rgba(255, 200, 60, 0.85),
+    inset 0 -6px 0 rgba(200, 110, 0, 0.35),
+    0 16px 28px rgba(0, 0, 0, 0.45);
+  font-size: 70px;
+  font-weight: 900;
+  color: #3a2200;
+  letter-spacing: 2px;
 }
 
 .meldung {
   position: absolute;
   left: 50%;
-  top: 40px;
+  top: 96px;
   transform: translateX(-50%);
-  padding: 16px 40px;
-  border-radius: 28px;
-  background: var(--karte);
+  padding: 18px 44px;
+  border-radius: 999px;
+  background: rgba(30, 8, 30, 0.6);
+  border: 2px solid rgba(255, 120, 150, 0.6);
+  box-shadow: 0 0 40px rgba(255, 77, 106, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-size: 44px;
-  font-weight: bold;
+  font-weight: 800;
   white-space: nowrap;
   z-index: 6;
 }
 
-/* Ergebnis */
+.meldung strong {
+  color: var(--gruen);
+  text-shadow: 0 0 16px rgba(61, 255, 160, 0.8);
+  font-size: 52px;
+}
+
+.funke {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 14px 4px currentColor;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.plus-eins {
+  position: absolute;
+  top: 400px;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow:
+    0 0 18px rgba(255, 211, 77, 0.9),
+    0 4px 0 rgba(120, 60, 0, 0.6);
+  pointer-events: none;
+  z-index: 7;
+}
+
+.szene.wackeln {
+  animation: wackeln 0.4s ease-in-out;
+}
+
+@keyframes wackeln {
+  20% {
+    transform: translate(-10px, 4px);
+  }
+  40% {
+    transform: translate(9px, -4px);
+  }
+  60% {
+    transform: translate(-6px, 3px);
+  }
+  80% {
+    transform: translate(4px, -2px);
+  }
+}
+
+/* ---------- Ergebnis ---------- */
+
 .ergebnis {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 44px;
   padding: 40px;
-}
-
-.ergebnis .karte {
-  background: var(--karte);
-  border-radius: 36px;
-  padding: 32px 40px;
 }
 
 .ergebnis .zusammenfassung {
@@ -392,38 +609,52 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
+  padding: 36px 40px 42px;
   text-align: center;
 }
 
 .ergebnis h2 {
   margin: 0;
-  font-size: 52px;
+  font-size: 54px;
+  font-weight: 900;
 }
 
 .ergebnis .punkte {
   margin: 0;
-  font-size: 40px;
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .ergebnis .punkte strong {
   display: block;
-  font-size: 120px;
-  color: var(--akzent);
+  font-size: 140px;
+  line-height: 1.05;
+  font-weight: 900;
+  background: linear-gradient(180deg, #fffbe6 10%, #ffd34d 55%, #ff8a3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px rgba(255, 180, 60, 0.6));
 }
 
 .ergebnis .platz {
-  margin: 0;
-  font-size: 32px;
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--tuerkis);
 }
 
 .bestenliste {
-  width: 560px;
+  width: 580px;
+  padding: 30px 34px;
 }
 
 .bestenliste h3 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-size: 40px;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -431,10 +662,15 @@ button {
   width: 100%;
   border-collapse: collapse;
   font-size: 30px;
+  font-weight: 700;
+}
+
+.bestenliste tr + tr td {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bestenliste td {
-  padding: 4px 10px;
+  padding: 3px 10px;
   height: 46px;
 }
 
@@ -443,7 +679,11 @@ button {
   width: 1%;
   white-space: nowrap;
   text-align: right;
-  font-weight: bold;
+  font-weight: 900;
+}
+
+.bestenliste td:last-child {
+  color: var(--gold);
 }
 
 .bestenliste td:nth-child(2) {
@@ -451,16 +691,26 @@ button {
 }
 
 .bestenliste td img {
-  height: 36px;
+  height: 38px;
   vertical-align: middle;
 }
 
 .bestenliste tr.neu {
-  background: #ffe14d;
+  background: linear-gradient(90deg, rgba(255, 211, 77, 0.35), rgba(255, 138, 61, 0.25));
 }
+
+
 
 .bestenliste .leer {
   font-size: 30px;
   text-align: center;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menue::before,
+  .figurenwahl button img,
+  .figur.in-fahrt .figur-koerper {
+    animation: none;
+  }
 }

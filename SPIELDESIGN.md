@@ -23,9 +23,14 @@ Welches Hindernis kommt, wird zufällig aus denen der Figur gewählt und dient n
 
 ## Szene
 
-- Ansicht von hinten: Die Figur steht unten in der Mitte, das Hindernis kommt von oben auf sie zu.
-- Vor dem Hindernis steht die Aufgabe, z. B. „+12“. Links und rechts vom Hindernis steht je eine Lösung.
+- Ansicht von hinten: Die Figur steht unten in der Mitte auf einer Strecke, die perspektivisch zum Horizont läuft.
+- Das Hindernis taucht klein am Horizont auf und kommt näher. Links und rechts davon steht je eine Lösung.
+- Die Aufgabe, z. B. „+12“, steht als Schild zwischen Figur und Hindernis, also vor dem Hindernis.
 - Das Hindernis hält vor der Figur an und wartet, bis eine Lösung gewählt ist. Es gibt keinen Zeitdruck.
+
+## Stil
+
+Angelehnt an das Spiel Lumo 2: schwebende, hell gekachelte Strecke mit Neonkanten, Weltraum- bzw. Märchenhimmel mit Nebeln und Sternen, Figuren und Hindernisse mit Farbverläufen, Glanzlichtern und Leuchteffekten, Menüs in Glas-Optik.
 
 ## Aufgaben
 

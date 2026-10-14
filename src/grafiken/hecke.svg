@@ -1,13 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 160">
-  <rect x="14" y="70" width="232" height="84" rx="20" fill="#2e7d32" stroke="#1b4d1e" stroke-width="5"/>
-  <circle cx="44" cy="70" r="32" fill="#388e3c" stroke="#1b4d1e" stroke-width="5"/>
-  <circle cx="96" cy="56" r="38" fill="#43a047" stroke="#1b4d1e" stroke-width="5"/>
-  <circle cx="156" cy="58" r="36" fill="#388e3c" stroke="#1b4d1e" stroke-width="5"/>
-  <circle cx="214" cy="70" r="32" fill="#43a047" stroke="#1b4d1e" stroke-width="5"/>
-  <rect x="20" y="88" width="220" height="60" rx="14" fill="#2e7d32"/>
-  <circle cx="80" cy="64" r="7" fill="#ff8fc7"/>
-  <circle cx="150" cy="48" r="7" fill="#fff59d"/>
-  <circle cx="200" cy="96" r="7" fill="#ff8fc7"/>
-  <circle cx="60" cy="112" r="7" fill="#ffffff"/>
-  <circle cx="130" cy="118" r="7" fill="#fff59d"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220">
+  <defs>
+    <radialGradient id="blatt" cx="0.4" cy="0.28" r="0.8">
+      <stop offset="0" stop-color="#b4f59a"/>
+      <stop offset="0.5" stop-color="#45c062"/>
+      <stop offset="1" stop-color="#17643a"/>
+    </radialGradient>
+    <linearGradient id="sockel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.25" stop-color="#ece4f8"/>
+      <stop offset="1" stop-color="#a996c8"/>
+    </linearGradient>
+    <filter id="weich" x="-0.5" y="-0.5" width="2" height="2">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="leuchten" x="-1.5" y="-1.5" width="4" height="4">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <ellipse cx="150" cy="206" rx="126" ry="11" fill="#2a1450" opacity="0.4" filter="url(#weich)"/>
+  <rect x="26" y="150" width="248" height="54" rx="16" fill="url(#sockel)" stroke="#8b77ad" stroke-width="2.5"/>
+  <rect x="26" y="150" width="248" height="10" rx="5" fill="#ffffff" opacity="0.8"/>
+  <path d="M40 186 L260 186" stroke="#45f0ff" stroke-width="4" stroke-linecap="round" filter="url(#leuchten)"/>
+  <path d="M40 186 L260 186" stroke="#d9fdff" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="68" cy="124" r="44" fill="url(#blatt)"/>
+  <circle cx="232" cy="124" r="44" fill="url(#blatt)"/>
+  <circle cx="118" cy="98" r="52" fill="url(#blatt)"/>
+  <circle cx="184" cy="98" r="52" fill="url(#blatt)"/>
+  <circle cx="150" cy="128" r="56" fill="url(#blatt)"/>
+  <path d="M96 76 Q106 68 118 70 M168 74 Q180 66 192 70 M54 112 Q62 104 72 106 M222 110 Q232 104 242 108 M134 112 Q146 104 158 108" fill="none" stroke="#d6ffc4" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <g filter="url(#leuchten)">
+    <circle cx="96" cy="90" r="8" fill="#ff7ad9"/>
+    <circle cx="170" cy="72" r="8" fill="#ffe066"/>
+    <circle cx="214" cy="124" r="8" fill="#ff7ad9"/>
+    <circle cx="70" cy="132" r="8" fill="#ffffff"/>
+    <circle cx="140" cy="140" r="8" fill="#ffe066"/>
+  </g>
+  <circle cx="96" cy="90" r="5" fill="#ffd1f2"/>
+  <circle cx="170" cy="72" r="5" fill="#fff6c2"/>
+  <circle cx="214" cy="124" r="5" fill="#ffd1f2"/>
+  <circle cx="70" cy="132" r="5" fill="#ffffff"/>
+  <circle cx="140" cy="140" r="5" fill="#fff6c2"/>
+  <circle cx="250" cy="70" r="3" fill="#45f0ff" filter="url(#leuchten)"/>
+  <circle cx="250" cy="70" r="2" fill="#e6feff"/>
+  <circle cx="44" cy="80" r="3" fill="#45f0ff" filter="url(#leuchten)"/>
+  <circle cx="44" cy="80" r="2" fill="#e6feff"/>
 </svg>

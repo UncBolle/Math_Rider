@@ -92,3 +92,23 @@
 **Offen / nächster Schritt**
 - Nutzer testet im Browser und auf dem Handy; Rückmeldungen als Aufgaben aufnehmen.
 - Danach T18 (GitHub Pages).
+
+## 2026-10-14 (6)
+
+**Erledigt**
+- Rückmeldung des Nutzers umgesetzt: Aufgabe steht jetzt als Schild vor dem Hindernis (zwischen Figur und Hindernis); Grafik komplett neu im Stil von Lumo 2.
+  - Perspektivische, schwebende Strecke mit Neonlinien auf Canvas (`kulisse.ts`), Hindernisse kommen vom Horizont näher (`perspektive.ts`, mit Tests).
+  - Neue SVGs: Figuren von hinten, Hindernisse mit Verläufen, Glanz und Leuchten.
+  - Menüs in Glas-Optik mit Neonknöpfen; Funken und „+1“ bei richtigen Antworten, Wackeln beim Ausscheiden.
+- Geprüft mit Edge headless: beide Figuren, richtige und falsche Antworten, alle Größen ohne Scrollen, keine fremden Anfragen, keine Konsolenfehler; 57 Tests grün.
+
+**Entscheidungen**
+- Strecke als Canvas statt CSS-3D: eine riesige 3D-Fläche wäre auf Handys zu speicherhungrig; das Canvas zeichnet nur, was sichtbar ist.
+- Kulisse und Hindernisse rechnen mit derselben Projektion (`perspektive.ts`) und werden im selben Bild bewegt: das Hindernis „steht“ fest auf der Strecke.
+- Nur Systemschriften, alle Effekte mit CSS/SVG/Canvas: weiterhin nichts von fremden Servern.
+
+**Bekannte Probleme**
+- Leistung auf älteren Handys noch nicht geprüft (Canvas, Unschärfe-Effekte der Glas-Optik).
+
+**Offen / nächster Schritt**
+- Nutzer testet den neuen Look; danach Abnahme von T11 bis T17 und T18 (GitHub Pages).
