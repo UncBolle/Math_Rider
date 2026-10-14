@@ -15,7 +15,7 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 
 ## Phase 2: Spiellogik (test-first, ohne Oberfläche)
 
-- [ ] **T2 Zufallsquelle für Tests.** Kleiner, deterministischer Zufallsgenerator mit Startwert, nur für Tests (z. B. `tests/hilfen/zufall.ts`).
+- [x] **T2 Zufallsquelle für Tests.** Kleiner, deterministischer Zufallsgenerator mit Startwert, nur für Tests (z. B. `tests/hilfen/zufall.ts`).
   Fertig, wenn: gleicher Startwert gleiche Zahlenfolge liefert und alle Werte in [0, 1) liegen.
 - [ ] **T3 Startzahl.** Fertig, wenn: S-01 bis S-02 grün.
 - [ ] **T4 Aufgabe erzeugen** aus aktueller Zahl und Aufgabennummer: Rechenart, Aufgabenzahl, richtige Lösung. Fertig, wenn: A-01 bis A-09 grün.
