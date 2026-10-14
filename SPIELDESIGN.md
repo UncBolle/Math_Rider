@@ -12,12 +12,14 @@ Einzige Quelle für die Spielregeln. Änderungen hier nur nach Zustimmung des Nu
 
 ## Figuren und Hindernisse
 
-| Figur | Hindernisse |
-|---|---|
-| Rakete | Schwarzes Loch, Asteroid |
-| Prinzessin auf Einhorn | Hecke, Graben |
+Jede Figur hat ein Thema; ihre Hindernisse passen dazu. Die Beispiele sind Vorschläge, weitere zum Thema passende Hindernisse dürfen dazukommen.
 
-Welches Hindernis der Figur kommt, wird zufällig gewählt und dient nur der Abwechslung; es hat keinen Einfluss auf die Aufgabe.
+| Figur | Thema | Beispiele für Hindernisse |
+|---|---|---|
+| Rakete | Weltraum | Schwarzes Loch, Asteroid |
+| Prinzessin auf Einhorn | Märchenland | Hecke, Graben |
+
+Welches Hindernis kommt, wird zufällig aus denen der Figur gewählt und dient nur der Abwechslung; es hat keinen Einfluss auf die Aufgabe.
 
 ## Szene
 
