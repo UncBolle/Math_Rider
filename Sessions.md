@@ -21,3 +21,18 @@
 **Offen / nächster Schritt**
 - Projekt mit Vite + TypeScript + Vitest aufsetzen und `.gitignore` anlegen.
 - Spiellogik (Aufgaben, falsche Lösungen) test-first umsetzen.
+
+## 2026-10-14 (2)
+
+**Erledigt**
+- AUFGABEN.md (Umsetzungsplan T1 bis T20) und TESTFAELLE.md (automatische und manuelle Testfälle) angelegt; AGENTS.md verweist darauf.
+
+**Entscheidungen**
+- Zufallsquelle wird in die Logik hineingereicht: Tests mit Zufall bleiben reproduzierbar.
+- Aufgaben und Testfälle als Markdown im Repo statt GitHub Issues: der Agent liest sie mit AGENTS.md ein, und `gh` ist nicht installiert.
+
+**Bekannte Probleme**
+- Fünf Annahmen in AUFGABEN.md sind noch nicht vom Nutzer bestätigt.
+
+**Offen / nächster Schritt**
+- Annahmen und Ordnerstruktur in AUFGABEN.md bestätigen lassen, dann T1.

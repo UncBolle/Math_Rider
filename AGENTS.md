@@ -6,7 +6,7 @@ Math_Rider ist ein Mathe-Lernspiel für Grundschulkinder (Plus und Minus im Zahl
 
 ## Ablauf jeder Sitzung
 
-1. **Einlesen:** Lies den letzten (untersten) Eintrag in [Sessions.md](Sessions.md) und setze bei den offenen Punkten an. Fertig ist dieser Schritt, wenn du den Stand in zwei, drei Sätzen zusammenfassen kannst.
+1. **Einlesen:** Lies den letzten (untersten) Eintrag in [Sessions.md](Sessions.md) und die nächste offene Aufgabe in [AUFGABEN.md](AUFGABEN.md); deren Testfälle stehen in [TESTFAELLE.md](TESTFAELLE.md). Fertig ist dieser Schritt, wenn du den Stand in zwei, drei Sätzen zusammenfassen kannst.
 2. **Vorschlagen:** Beschreibe, was du in dieser Sitzung umsetzen willst und wie. Bei allem aus der Liste „Vorher fragen“ wartest du auf Zustimmung.
 3. **Umsetzen:** Arbeite in kleinen, abgeschlossenen Schritten. Ein Schritt ist fertig, wenn die Tests grün sind und die Kriterien unter „Geräte und Bedienung“ erfüllt sind. Dann folgt ein lokaler Git-Commit mit einer aussagekräftigen deutschen Nachricht.
 4. **Protokollieren:** Hänge am Ende der Sitzung einen Eintrag **unten** an [Sessions.md](Sessions.md) an (Format siehe unten).
