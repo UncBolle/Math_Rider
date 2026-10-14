@@ -1,0 +1,466 @@
+/* Nur Systemschriften: nichts wird von fremden Servern geladen */
+:root {
+  --schrift: "Trebuchet MS", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --tinte: #1d2340;
+  --hell: #ffffff;
+  --akzent: #ff7a3d;
+  --akzent-dunkel: #d9541a;
+  --richtig: #2e9d4e;
+  --falsch: #d93a3a;
+  --karte: #ffffffee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1f3d;
+  color: var(--tinte);
+  font-family: var(--schrift);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+}
+
+.buehne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  transform-origin: 0 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, #6ec6ff 0%, #b388ff 100%);
+}
+
+.bildschirm {
+  position: absolute;
+  inset: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.knopf {
+  border: none;
+  border-radius: 28px;
+  padding: 18px 48px;
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--hell);
+  background: var(--akzent);
+  box-shadow: 0 8px 0 var(--akzent-dunkel);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.knopf:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 var(--akzent-dunkel);
+}
+
+.knopf:focus-visible,
+.figurenwahl button:focus-visible,
+.loesung:focus-visible {
+  outline: 6px solid #ffe14d;
+  outline-offset: 6px;
+}
+
+.titel {
+  margin: 0;
+  font-size: 96px;
+  color: var(--hell);
+  text-shadow: 0 6px 0 #3d2b8f;
+  letter-spacing: 2px;
+}
+
+/* Startbildschirm: Name */
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.start form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: var(--karte);
+  padding: 36px 56px;
+  border-radius: 36px;
+}
+
+.start label {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.start input {
+  width: 560px;
+  font-family: inherit;
+  font-size: 48px;
+  padding: 12px 24px;
+  border: 5px solid #b388ff;
+  border-radius: 20px;
+  text-align: center;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.start input:focus {
+  outline: none;
+  border-color: var(--akzent);
+}
+
+.hinweis {
+  min-height: 40px;
+  margin: 0;
+  font-size: 32px;
+  color: var(--falsch);
+}
+
+/* Figurenwahl */
+.figurenwahl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.figurenwahl h2 {
+  margin: 0;
+  font-size: 56px;
+  color: var(--hell);
+  text-shadow: 0 4px 0 #3d2b8f;
+}
+
+.figurenwahl .auswahl {
+  display: flex;
+  gap: 80px;
+}
+
+.figurenwahl button {
+  width: 400px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: none;
+  border-radius: 40px;
+  background: var(--karte);
+  box-shadow: 0 10px 0 #7e57c2;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--tinte);
+  transition: transform 0.15s;
+}
+
+.figurenwahl button:hover {
+  transform: scale(1.04);
+}
+
+.figurenwahl button img {
+  height: 280px;
+}
+
+/* Spielszene */
+.szene {
+  overflow: hidden;
+}
+
+.szene .hintergrund {
+  position: absolute;
+  inset: -720px 0 0 0;
+  animation: fahren 1.2s linear infinite;
+  animation-play-state: paused;
+}
+
+.szene.in-fahrt .hintergrund {
+  animation-play-state: running;
+}
+
+@keyframes fahren {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(240px);
+  }
+}
+
+.thema-weltraum {
+  background: radial-gradient(ellipse at 50% 120%, #3b2a7a 0%, #0b1030 70%);
+}
+
+.thema-weltraum .hintergrund {
+  background-image:
+    radial-gradient(3px 3px at 40px 60px, #fff, transparent),
+    radial-gradient(2px 2px at 180px 20px, #ffe9a8, transparent),
+    radial-gradient(3px 3px at 120px 170px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 120px, #b3e5fc, transparent),
+    radial-gradient(2px 2px at 20px 200px, #fff, transparent);
+  background-size: 240px 240px;
+}
+
+.thema-maerchenland {
+  background: #8bd16a;
+}
+
+.thema-maerchenland .hintergrund {
+  background-image:
+    linear-gradient(90deg, transparent 33%, #f3d9a4 33%, #f3d9a4 67%, transparent 67%),
+    radial-gradient(10px 10px at 60px 60px, #ff8fc7 60%, transparent 61%),
+    radial-gradient(10px 10px at 1180px 150px, #fff59d 60%, transparent 61%),
+    radial-gradient(8px 8px at 200px 200px, #ffffff 60%, transparent 61%),
+    radial-gradient(8px 8px at 1060px 40px, #ff8fc7 60%, transparent 61%),
+    linear-gradient(90deg, transparent 49%, #e6c584 49%, #e6c584 51%, transparent 51%);
+  background-size:
+    100% 100%,
+    1280px 240px,
+    1280px 240px,
+    1280px 240px,
+    1280px 240px,
+    100% 120px;
+}
+
+.anzeige {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--hell);
+  text-shadow: 0 3px 0 #0008;
+  z-index: 5;
+}
+
+.figur {
+  position: absolute;
+  left: 540px;
+  top: 470px;
+  width: 200px;
+  height: 230px;
+  z-index: 3;
+}
+
+.figur img {
+  width: 100%;
+  height: 100%;
+}
+
+.zahl {
+  position: absolute;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  margin-left: -42px;
+  margin-top: -42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--hell);
+  border: 5px solid var(--tinte);
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--tinte);
+}
+
+.figur-rakete .zahl {
+  top: 48%;
+}
+
+.figur-prinzessin .zahl {
+  top: 72%;
+}
+
+.hindernis-gruppe {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 1280px;
+  height: 280px;
+  z-index: 2;
+}
+
+.aufgabe {
+  position: absolute;
+  left: 490px;
+  top: 0;
+  width: 300px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: #ffe14d;
+  border: 5px solid var(--tinte);
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.hindernis {
+  position: absolute;
+  left: 510px;
+  top: 110px;
+  width: 260px;
+  height: 160px;
+}
+
+.loesung {
+  position: absolute;
+  top: 120px;
+  width: 200px;
+  height: 130px;
+  border: 6px solid var(--tinte);
+  border-radius: 32px;
+  background: var(--hell);
+  box-shadow: 0 8px 0 #0005;
+  font-size: 68px;
+  font-weight: bold;
+  color: var(--tinte);
+}
+
+.loesung.links {
+  left: 270px;
+}
+
+.loesung.rechts {
+  left: 810px;
+}
+
+.loesung.richtig {
+  background: var(--richtig);
+  color: var(--hell);
+}
+
+.loesung.falsch {
+  background: var(--falsch);
+  color: var(--hell);
+}
+
+.meldung {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  padding: 16px 40px;
+  border-radius: 28px;
+  background: var(--karte);
+  font-size: 44px;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 6;
+}
+
+/* Ergebnis */
+.ergebnis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 40px;
+}
+
+.ergebnis .karte {
+  background: var(--karte);
+  border-radius: 36px;
+  padding: 32px 40px;
+}
+
+.ergebnis .zusammenfassung {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.ergebnis h2 {
+  margin: 0;
+  font-size: 52px;
+}
+
+.ergebnis .punkte {
+  margin: 0;
+  font-size: 40px;
+}
+
+.ergebnis .punkte strong {
+  display: block;
+  font-size: 120px;
+  color: var(--akzent);
+}
+
+.ergebnis .platz {
+  margin: 0;
+  font-size: 32px;
+}
+
+.bestenliste {
+  width: 560px;
+}
+
+.bestenliste h3 {
+  margin: 0 0 12px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.bestenliste table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 30px;
+}
+
+.bestenliste td {
+  padding: 4px 10px;
+  height: 46px;
+}
+
+.bestenliste td:first-child,
+.bestenliste td:last-child {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+  font-weight: bold;
+}
+
+.bestenliste td:nth-child(2) {
+  width: 1%;
+}
+
+.bestenliste td img {
+  height: 36px;
+  vertical-align: middle;
+}
+
+.bestenliste tr.neu {
+  background: #ffe14d;
+}
+
+.bestenliste .leer {
+  font-size: 30px;
+  text-align: center;
+  color: #555;
+}
