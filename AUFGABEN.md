@@ -18,7 +18,7 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 - [x] **T2 Zufallsquelle für Tests.** Kleiner, deterministischer Zufallsgenerator mit Startwert, nur für Tests (z. B. `tests/hilfen/zufall.ts`).
   Fertig, wenn: gleicher Startwert gleiche Zahlenfolge liefert und alle Werte in [0, 1) liegen.
 - [x] **T3 Startzahl.** Fertig, wenn: S-01 bis S-02 grün.
-- [ ] **T4 Aufgabe erzeugen** aus aktueller Zahl und Aufgabennummer: Rechenart, Aufgabenzahl, richtige Lösung. Fertig, wenn: A-01 bis A-09 grün.
+- [x] **T4 Aufgabe erzeugen** aus aktueller Zahl und Aufgabennummer: Rechenart, Aufgabenzahl, richtige Lösung. Fertig, wenn: A-01 bis A-09 grün.
 - [ ] **T5 Falsche Lösung erzeugen.** Fertig, wenn: F-01 bis F-06 grün.
 - [ ] **T6 Lösungen anordnen** (richtige Lösung zufällig links oder rechts). Fertig, wenn: L-01 bis L-02 grün.
 - [ ] **T7 Spielablauf** als Zustand eines Laufs: Start, Antwort wählen, Ausscheiden, Nochmal, Hindernis passend zur Figur. Fertig, wenn: P-01 bis P-07 grün.
