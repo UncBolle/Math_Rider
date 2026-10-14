@@ -16,21 +16,21 @@ Jede Figur hat ein Thema; ihre Hindernisse passen dazu. Die Beispiele sind Vorsc
 
 | Figur | Thema | Beispiele für Hindernisse |
 |---|---|---|
-| Rakete | Weltraum | Schwarzes Loch, Asteroid |
-| Prinzessin auf Einhorn | Märchenland | Hecke, Graben |
+| Rakete | Weltraum: freier Flug durch Nebel und Sterne, keine Straße | Asteroid, Schwarzes Loch, Komet |
+| Prinzessin auf Einhorn | Märchenwald: Ritt auf einem Waldweg durch einen leuchtenden Wald bei Nacht | umgestürzter Baumstamm, Felsbrocken, Dornengestrüpp |
 
 Welches Hindernis kommt, wird zufällig aus denen der Figur gewählt und dient nur der Abwechslung; es hat keinen Einfluss auf die Aufgabe.
 
 ## Szene
 
-- Ansicht von hinten: Die Figur steht unten in der Mitte auf einer Strecke, die perspektivisch zum Horizont läuft.
-- Das Hindernis taucht klein am Horizont auf und kommt näher. Links und rechts davon steht je eine Lösung.
+- Echtes 3D, Ansicht leicht seitlich von hinten und oben: Die Figur ist unten im Bild, die Welt zieht auf sie zu.
+- Das Hindernis taucht in der Ferne auf und kommt näher. Links und rechts davon steht je eine Lösung (Weltraum: Neon-Portal, Märchenwald: Leuchtkugel).
 - Die Aufgabe, z. B. „+12“, steht als Schild zwischen Figur und Hindernis, also vor dem Hindernis.
 - Das Hindernis hält vor der Figur an und wartet, bis eine Lösung gewählt ist. Es gibt keinen Zeitdruck.
 
 ## Stil
 
-Angelehnt an das Spiel Lumo 2: schwebende, hell gekachelte Strecke mit Neonkanten, Weltraum- bzw. Märchenhimmel mit Nebeln und Sternen, Figuren und Hindernisse mit Farbverläufen, Glanzlichtern und Leuchteffekten, Menüs in Glas-Optik.
+Modern, detailreich, leuchtend: echte 3D-Modelle mit Licht, Spiegelungen und Leuchteffekten (Bloom). Weltraum mit Nebeln, Sternenfeldern, Planeten und vorbeirauschendem Sternenstaub. Märchenwald bei Nacht mit Mondlicht, Nebel, Glühwürmchen, leuchtenden Pilzen und farbig glimmenden Zauberbäumen. Menüs in Glas-Optik mit Neonknöpfen.
 
 ## Aufgaben
 

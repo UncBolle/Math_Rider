@@ -29,8 +29,9 @@ Alles andere (Bugfixes, Tests, Umsetzung eines abgesegneten Plans) setzt du dire
 
 ## Technik
 
-- TypeScript + Vite, Darstellung mit HTML/CSS (DOM). Tests mit Vitest.
-- Grafiken (Figuren, Hindernisse) sind eigene, einfache SVGs im Repo.
+- TypeScript + Vite. Menüs und Anzeigen mit HTML/CSS, die Spielszene in echtem 3D mit Three.js. Tests mit Vitest.
+- 3D-Modelle liegen in `public/modelle/`, nur mit CC0-Lizenz, jede Quelle eingetragen in `public/modelle/LIZENZEN.md`. Texturen vor dem Einchecken verkleinern (höchstens 1024 px).
+- Im Entwicklungsmodus hängt die 3D-Szene an `window.__szene`, damit Prüfskripte sie abfragen können.
 - Alles wird mit dem Spiel ausgeliefert: Schriftarten, Bilder und Bibliotheken liegen im Projekt, die Seite lädt nichts von fremden Servern.
 - Veröffentlichung später über GitHub Pages per GitHub Actions; einrichten erst, wenn es etwas Spielbares gibt.
 

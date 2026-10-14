@@ -112,3 +112,28 @@
 
 **Offen / nächster Schritt**
 - Nutzer testet den neuen Look; danach Abnahme von T11 bis T17 und T18 (GitHub Pages).
+
+## 2026-10-15
+
+**Erledigt**
+- Rückmeldung „sieht zu sehr nach 90ern aus“: Spielszene komplett auf echtes 3D mit Three.js umgestellt.
+  - Weltraum: freier Flug (keine Straße), Nebel-Shader, Sternenfelder, Planeten, Sternenstaub; Rakete im Code gebaut; Asteroid, Komet, Schwarzes Loch; Lösungen als Neon-Portale.
+  - Märchenwald bei Nacht: Bäume, Farne, Blumen, Pilze, Felsen aus dem Stylized Nature MegaKit (CC0), Mond, Nebel, Glühwürmchen, Mondstrahlen, violett/türkis glimmende Zauberbäume; Hindernisse Baumstamm, Felsen, Dornengestrüpp; Lösungen als Leuchtkugeln.
+  - Einhorn aus Quaternius „White Horse“ (Galopp/Stehen animiert) mit Glanzfell, Regenbogenmähne, leuchtendem Horn; Prinzessin aus „Woman in Dress“ (Sitz-Animation) mit Krone.
+  - Menübilder der Figuren aus der 3D-Szene gerendert (PNG statt SVG).
+- Alte 2D-Darstellung entfernt (Canvas-Kulisse, Perspektivrechnung samt Test, SVG-Grafiken).
+
+**Entscheidungen**
+- Three.js mit freien CC0-Modellen statt handgezeichneter SVGs: vom Nutzer gewählt; nur so wirkt es modern und detailreich.
+- Zahlen, Lösungen und Aufgabenschild bleiben HTML-Elemente, die jedes Bild an 3D-Punkte gehängt werden: gestochen scharf und weiter klick- und tippbar.
+- Kamera leicht seitlich versetzt: von genau hinten wirken Einhorn und Rakete zu schmal.
+- Texturen auf höchstens 1024 px verkleinert (35 MB → 5 MB).
+
+**Bekannte Probleme**
+- Ladegröße rund 11 MB Modelle + 190 kB Skript (gezippt); Ladezeit auf langsamem Netz noch nicht gemessen.
+- Leistung auf echten Handys ungetestet (Bloom-Effekt, viele Bäume). Falls es ruckelt: Bloom auf Handys abschalten oder Bäume zusammenfassen (InstancedMesh).
+- Die Prinzessin ist ein einfaches Modell; ein schöneres freies Prinzessinnen-Modell gab es nicht.
+
+**Offen / nächster Schritt**
+- Nutzer testet den neuen 3D-Look am PC und Handy.
+- Danach T18 (GitHub Pages; dabei Vite `base` und die Modellpfade prüfen).
