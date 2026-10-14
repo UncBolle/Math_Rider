@@ -24,7 +24,7 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 - [x] **T7 Spielablauf** als Zustand eines Laufs: Start, Antwort wählen, Ausscheiden, Nochmal, Hindernis passend zur Figur. Fertig, wenn: P-01 bis P-07 grün.
 - [x] **T8 Name prüfen.** Fertig, wenn: N-01 bis N-04 grün.
 - [x] **T9 Bestenliste.** Fertig, wenn: B-01 bis B-07 grün.
-- [ ] **T10 Speichern im Browser** (Name, Bestenliste) über `localStorage`, robust gegen fehlende oder kaputte Daten. Fertig, wenn: D-01 bis D-04 grün.
+- [x] **T10 Speichern im Browser** (Name, Bestenliste) über `localStorage`, robust gegen fehlende oder kaputte Daten. Fertig, wenn: D-01 bis D-04 grün.
 
 ## Phase 3: Oberfläche
 

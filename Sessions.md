@@ -53,3 +53,21 @@
 
 **Offen / nächster Schritt**
 - T2 (Zufallsquelle für Tests), dann T3 bis T10 test-first.
+
+## 2026-10-14 (4)
+
+**Erledigt**
+- T2 bis T10: komplette Spiellogik in `src/logik/`, test-first, 51 Tests grün, Build ohne Fehler.
+  - `zufall.ts`, `startzahl.ts`, `aufgabe.ts`, `falscheLoesung.ts`, `anordnung.ts`, `figuren.ts`, `lauf.ts`, `name.ts`, `bestenliste.ts`, `speicher.ts`.
+
+**Entscheidungen**
+- Spielzustand (`Lauf`) ist unveränderlich: jede Wahl liefert einen neuen Lauf. Die Oberfläche kann so vorher und nachher vergleichen (z. B. für Animationen).
+- Falsche Lösung: gleichverteilt aus allen gültigen Fehlern (±1, ±2, ±10, Rechenzeichen vertauscht).
+- Speicherfunktionen bekommen den Speicher übergeben (`Speicher | null`): testbar, und ohne localStorage läuft das Spiel einfach ohne Speichern.
+- Geladene Bestenliste wird geprüft; bei kaputten Einträgen ist sie leer, sonst sortiert und auf 10 gekürzt.
+
+**Bekannte Probleme**
+- Die Werkzeug-Shell des Agenten findet `node` erst mit `PATH="/c/Program Files/nodejs:$PATH"`; im eigenen Terminal des Nutzers ist es nach dem Neustart eingetragen.
+
+**Offen / nächster Schritt**
+- Phase 3: T11 (Bühne im Querformat), dann T12 bis T17.
