@@ -41,6 +41,10 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 - [ ] **T18 GitHub Pages.** GitHub-Actions-Workflow, der bei Push auf `main` baut und veröffentlicht; Vite `base` auf `/Math_Rider/`. Fertig, wenn: der Workflow grün ist, das Spiel unter `https://uncbolle.github.io/Math_Rider/` läuft und M-12 dort bestanden ist. (Der Push dafür nur auf Befehl des Nutzers.)
 - [ ] **T19 Test auf echten Geräten.** Nutzer prüft M-14. Fertig, wenn: der Nutzer es bestätigt und gefundene Probleme als Aufgaben hier stehen.
 
+## Nächste Version
+
+- [ ] **T21 Zahl auf der Figur gut lesbar.** Wunsch des Nutzers: Die Zahl auf der Spielfigur darf nicht zu klein sein. Fertig, wenn: die Zahl bei 640 × 360 px mindestens so groß ist wie die Zahlen auf den Lösungen, die Figur dabei erkennbar bleibt (Zahl verdeckt höchstens die Hälfte der Figur) und der Nutzer es abnimmt.
+
 ## Später
 
 - [ ] **T20 Töne.** Leise, freundliche Töne für richtig und falsch, gut sichtbarer Stummschalter, Einstellung wird gespeichert.
