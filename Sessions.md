@@ -71,3 +71,24 @@
 
 **Offen / nächster Schritt**
 - Phase 3: T11 (Bühne im Querformat), dann T12 bis T17.
+
+## 2026-10-14 (5)
+
+**Erledigt**
+- T11 bis T17 umgesetzt: Bühne 1280 × 720 (wird eingepasst), eigene SVGs, Namenseingabe, Figurenwahl, Spielszene mit Animationen, Ergebnis mit Bestenliste. Das Spiel ist durchspielbar.
+- Selbst geprüft mit Edge headless (Skript über die DevTools-Schnittstelle): beide Figuren durchgespielt, richtige und falsche Antworten, Pfeiltasten, Bestenliste wird gespeichert und hervorgehoben, Name nach Neuladen vorausgefüllt; kein Scrollen bei 640 × 360, 1920 × 1080 und hochkant 360 × 640; keine Anfragen an fremde Server; keine Fehler in der Konsole.
+
+**Entscheidungen**
+- Bühne mit festen Maßen, per `transform: scale` eingepasst: alle Bildschirme rechnen in denselben Punkten, auf jedem Gerät gleich.
+- Animationen mit der Web Animations API; bei „Bewegung reduzieren“ im System laufen sie kürzer.
+- Beim Ausscheiden zeigt das Spiel die richtige Lösung („Knapp daneben! Richtig war 17.“): das Kind lernt dabei.
+- Figurenwahl fragt „Wähle deine Figur:“, weil die Prinzessin nicht „fährt“.
+- Jeder Bildschirm meldet Tasten über ein `AbortSignal` an; beim Wechsel werden sie gemeinsam abgemeldet.
+
+**Bekannte Probleme**
+- Noch nicht geprüft: echtes Touch und echte Handys (M-04, M-11 Handy-Tastatur, M-14). T11 bis T17 bleiben offen, bis der Nutzer getestet hat.
+- Nach dem Ergebnis gibt es nur „Nochmal“ (laut SPIELDESIGN.md); Name oder Figur wechseln geht nur über Neuladen.
+
+**Offen / nächster Schritt**
+- Nutzer testet im Browser und auf dem Handy; Rückmeldungen als Aufgaben aufnehmen.
+- Danach T18 (GitHub Pages).
