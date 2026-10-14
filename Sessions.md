@@ -36,3 +36,20 @@
 
 **Offen / nächster Schritt**
 - Annahmen und Ordnerstruktur in AUFGABEN.md bestätigen lassen, dann T1.
+
+## 2026-10-14 (3)
+
+**Erledigt**
+- Annahmen bestätigt und in SPIELDESIGN.md übernommen.
+- Node.js 24.20.0 (LTS) per winget installiert.
+- T1: Vite 8, TypeScript 7, Vitest 5; Ordner `src/logik/`, `src/ansicht/`, `src/grafiken/`, `tests/`; Platzhalterseite, Beispieltest, `.gitignore`.
+
+**Entscheidungen**
+- Tests liegen unter `tests/`, getrennt vom Spielcode: `src/` enthält nur, was ausgeliefert wird.
+- `npm run build` prüft vorher die Typen mit `tsc`: Typfehler stoppen den Build.
+
+**Bekannte Probleme**
+- VS Code muss neu gestartet werden, damit `node` und `npm` im Terminal gefunden werden.
+
+**Offen / nächster Schritt**
+- T2 (Zufallsquelle für Tests), dann T3 bis T10 test-first.

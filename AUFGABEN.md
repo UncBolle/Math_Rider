@@ -10,7 +10,7 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 
 ## Phase 1: Grundlage
 
-- [ ] **T1 Projekt aufsetzen.** Vite-Vorlage `vanilla-ts`, Vitest, `.gitignore` (u. a. `node_modules/`, `dist/`), npm-Skripte `dev`, `build`, `test`, Ordner wie unter „Aufbau“.
+- [x] **T1 Projekt aufsetzen.** Vite-Vorlage `vanilla-ts`, Vitest, `.gitignore` (u. a. `node_modules/`, `dist/`), npm-Skripte `dev`, `build`, `test`, Ordner wie unter „Aufbau“.
   Fertig, wenn: `npm run dev` eine Platzhalterseite zeigt, `npm test` einen Beispieltest grün meldet und `npm run build` ohne Fehler läuft.
 
 ## Phase 2: Spiellogik (test-first, ohne Oberfläche)
