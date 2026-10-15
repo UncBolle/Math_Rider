@@ -72,3 +72,13 @@ export function ladeBestenliste(speicher: Speicher | null): Eintrag[] {
 export function speichereBestenliste(speicher: Speicher | null, liste: readonly Eintrag[]): void {
   schreibe(speicher, SCHLUESSEL_BESTENLISTE, JSON.stringify(liste));
 }
+
+export const SCHLUESSEL_STUMM = "mathRider.stumm";
+
+export function ladeStumm(speicher: Speicher | null): boolean {
+  return lies(speicher, SCHLUESSEL_STUMM) === "ja";
+}
+
+export function speichereStumm(speicher: Speicher | null, stumm: boolean): void {
+  schreibe(speicher, SCHLUESSEL_STUMM, stumm ? "ja" : "nein");
+}

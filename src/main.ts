@@ -4,6 +4,7 @@ import { zeigeErgebnisBildschirm } from "./ansicht/ergebnisBildschirm";
 import { zeigeFigurenBildschirm } from "./ansicht/figurenBildschirm";
 import { zeigeNameBildschirm } from "./ansicht/nameBildschirm";
 import { zeigeSpielBildschirm } from "./ansicht/spielBildschirm";
+import { erstelleToene } from "./ansicht/toene";
 import { trageEin } from "./logik/bestenliste";
 import { nochmal, starteLauf, type Lauf } from "./logik/lauf";
 import {
@@ -16,6 +17,7 @@ import {
 
 const zufall = Math.random;
 const speicher = standardSpeicher();
+const toene = erstelleToene(speicher);
 const buehne = erstelleBuehne(document.querySelector<HTMLDivElement>("#app")!);
 
 // Jeder Bildschirm meldet seine Tasten-Ereignisse über dieses Signal an;
@@ -40,7 +42,7 @@ function figurWaehlen(name: string) {
 }
 
 function spielen(lauf: Lauf) {
-  zeigeSpielBildschirm(buehne, lauf, zufall, neuerBildschirm(), ergebnis);
+  zeigeSpielBildschirm(buehne, lauf, zufall, neuerBildschirm(), ergebnis, toene);
 }
 
 function ergebnis(lauf: Lauf) {

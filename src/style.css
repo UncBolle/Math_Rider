@@ -348,6 +348,26 @@ button {
   text-shadow: 0 0 14px rgba(255, 211, 77, 0.7);
 }
 
+.ton-knopf {
+  pointer-events: auto;
+  width: 92px;
+  height: 64px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  color: var(--weiss);
+  cursor: pointer;
+}
+
+.ton-knopf svg {
+  width: 46px;
+  height: 46px;
+}
+
+.ton-knopf.stumm {
+  color: #ff9cb0;
+}
+
 .zahl {
   width: 104px;
   height: 104px;

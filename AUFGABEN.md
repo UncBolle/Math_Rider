@@ -47,4 +47,4 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 
 ## Später
 
-- [ ] **T20 Töne.** Leise, freundliche Töne für richtig und falsch, gut sichtbarer Stummschalter, Einstellung wird gespeichert.
+- [x] **T20 Töne.** Leise, freundliche Töne für richtig und falsch, gut sichtbarer Stummschalter, Einstellung wird gespeichert.

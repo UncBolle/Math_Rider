@@ -4,6 +4,8 @@ import type { Zufall } from "../logik/zufall";
 import { FIGUR_THEMA } from "./grafiken";
 import { dauer, element, warte } from "./hilfen";
 import { baueMaerchenwald } from "./maerchenwald3d";
+import { tonKnopf } from "./tonKnopf";
+import type { Toene } from "./toene";
 import { erstelleWelt, ENDE_Z, RUHE_Z, SPUR_X, verlauf, type Anker } from "./welt3d";
 import { baueWeltraum } from "./weltraum3d";
 
@@ -16,6 +18,7 @@ export function zeigeSpielBildschirm(
   zufall: Zufall,
   signal: AbortSignal,
   ende: (lauf: Lauf) => void,
+  toene: Toene,
 ): void {
   let lauf = start;
   // Gesperrt, solange sich etwas bewegt: nur die erste Wahl zählt
@@ -28,7 +31,7 @@ export function zeigeSpielBildschirm(
 
   const anzeige = element("div", "anzeige");
   const punkteAnzeige = element("span", "pille punkte-pille");
-  anzeige.append(punkteAnzeige, element("span", "pille", lauf.name));
+  anzeige.append(punkteAnzeige, tonKnopf(toene, signal), element("span", "pille", lauf.name));
 
   const zahl = element("div", "zahl schwebend");
   const schild = element("div", "aufgabe schwebend");
@@ -90,6 +93,7 @@ export function zeigeSpielBildschirm(
   async function waehle(seite: Seite) {
     if (gesperrt || signal.aborted) return;
     gesperrt = true;
+    toene.wecke();
 
     lauf = waehleLoesung(lauf, seite, zufall);
     knoepfe[seite].classList.add("gewaehlt");
@@ -103,6 +107,7 @@ export function zeigeSpielBildschirm(
     // Richtig: Die Figur fliegt bzw. reitet durch die Lösung, das Hindernis zieht vorbei
     knoepfe[seite].classList.add("richtig");
     welt.markiere(seite, "richtig");
+    toene.richtig();
     const vorbei = welt.fahre(ENDE_Z, 1000, verlauf.beschleunigen);
     void warte(560).then(() => {
       funken(zahlAnker.x, zahlAnker.y - 40, ["#ffe14d", "#4dff9a", "#ffffff"], 22);
@@ -121,6 +126,7 @@ export function zeigeSpielBildschirm(
     knoepfe[seite].classList.add("falsch");
     knoepfe[richtigeSeite].classList.add("richtig");
     welt.markiere(seite, "falsch");
+    toene.falsch();
     welt.markiere(richtigeSeite, "richtig");
 
     await welt.fahre(AUFPRALL_Z, 700, verlauf.beschleunigen);

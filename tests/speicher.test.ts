@@ -3,9 +3,11 @@ import type { Eintrag } from "../src/logik/bestenliste";
 import {
   ladeBestenliste,
   ladeName,
+  ladeStumm,
   SCHLUESSEL_BESTENLISTE,
   speichereBestenliste,
   speichereName,
+  speichereStumm,
   standardSpeicher,
   type Speicher,
 } from "../src/logik/speicher";
@@ -85,5 +87,25 @@ describe("T10: Speichern im Browser", () => {
     const speicher = testSpeicher();
     expect(ladeName(speicher)).toBe("");
     expect(ladeBestenliste(speicher)).toEqual([]);
+  });
+});
+
+describe("T20: Stummschaltung speichern", () => {
+  it("ist beim ersten Besuch nicht stumm", () => {
+    expect(ladeStumm(testSpeicher())).toBe(false);
+  });
+
+  it("merkt sich stumm und wieder laut", () => {
+    const speicher = testSpeicher();
+    speichereStumm(speicher, true);
+    expect(ladeStumm(speicher)).toBe(true);
+    speichereStumm(speicher, false);
+    expect(ladeStumm(speicher)).toBe(false);
+  });
+
+  it("bleibt bei kaputtem Speicher oder ohne Speicher laut und stürzt nicht ab", () => {
+    expect(ladeStumm(kaputterSpeicher)).toBe(false);
+    expect(() => speichereStumm(kaputterSpeicher, true)).not.toThrow();
+    expect(ladeStumm(null)).toBe(false);
   });
 });
