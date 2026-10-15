@@ -137,3 +137,23 @@
 **Offen / nächster Schritt**
 - Nutzer testet den neuen 3D-Look am PC und Handy.
 - Danach T18 (GitHub Pages; dabei Vite `base` und die Modellpfade prüfen).
+
+## 2026-10-15 (2)
+
+**Erledigt**
+- T11 bis T17 abgehakt (Nutzer hat den 3D-Stand abgenommen).
+- T21: Zahl auf der Figur so groß wie die Lösungszahlen (104 px, Schrift 60 px); bei der Rakete tiefer auf den Rumpf gesetzt, damit sie das Aufgabenschild nicht berührt. Wartet auf Abnahme durch den Nutzer.
+- T20: Töne per Web Audio (keine Dateien): Glockenspiel bei richtig, sanft abfallender Ton bei falsch; Stummschalter oben in der Mitte, Einstellung wird gespeichert (`ladeStumm`/`speichereStumm`, mit Tests). 54 Tests grün.
+- T18 vorbereitet: `vite.config.ts` mit relativen Pfaden, Workflow `.github/workflows/veroeffentlichen.yml` (Tests, Build, GitHub Pages). Build im Unterordner `/Math_Rider/` geprüft: beide Welten laden, keine fremden Anfragen, keine Fehler.
+
+**Entscheidungen**
+- `base: "./"` statt fest `/Math_Rider/`: läuft lokal und auf GitHub Pages gleich, auch wenn das Repo umbenannt wird.
+- Audio-Kontext wird direkt im Klick angelegt (`wecke()`): sonst bleibt der Ton auf iPhones stumm.
+
+**Bekannte Probleme**
+- Ob die Töne gut klingen, konnte der Agent nicht hören; Nutzer bitte prüfen.
+- T18 erst fertig, wenn der Nutzer in GitHub unter Settings → Pages als Quelle „GitHub Actions“ wählt und pusht.
+
+**Offen / nächster Schritt**
+- Nutzer: T21 abnehmen, Töne anhören, GitHub Pages aktivieren, pushen.
+- Danach T19 (Test auf echten Geräten unter der veröffentlichten Adresse).
