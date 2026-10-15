@@ -349,8 +349,8 @@ button {
 }
 
 .zahl {
-  width: 64px;
-  height: 64px;
+  width: 104px;
+  height: 104px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -360,7 +360,7 @@ button {
     0 0 0 4px var(--neon),
     0 0 30px var(--neon-schein),
     0 8px 16px rgba(0, 0, 0, 0.4);
-  font-size: 33px;
+  font-size: 60px;
   font-weight: 900;
   color: var(--tinte);
   z-index: 4;

@@ -28,13 +28,13 @@ Umsetzungsplan in der empfohlenen Reihenfolge. Jede Aufgabe ist ein Schritt im S
 
 ## Phase 3: Oberfläche
 
-- [ ] **T11 Bühne im Querformat.** Feste Spielfläche im Seitenverhältnis 16:9, die sich in jedes Fenster einpasst; im Hochformat verkleinert mit Rand. Fertig, wenn: M-01 bis M-03 bestanden.
-- [ ] **T12 Grafiken.** SVGs für Rakete, Prinzessin auf Einhorn, je mindestens zwei Hindernisse pro Thema, Hintergrund je Thema. Fertig, wenn: alle Grafiken im Repo liegen, auf hellem und dunklem Hintergrund erkennbar sind und M-12 bestanden ist.
-- [ ] **T13 Startbildschirm: Name.** Eingabefeld (max. 20 Zeichen), Bestätigen mit Enter oder Schaltfläche, letzter Name vorausgefüllt. Fertig, wenn: M-11 bestanden.
-- [ ] **T14 Figurenwahl.** Zwei große Schaltflächen mit Bild. Fertig, wenn: Auswahl per Maus, Touch und Tastatur funktioniert.
-- [ ] **T15 Spielszene.** Figur unten mittig mit Zahl, Hindernis kommt von oben und hält an, Aufgabe davor, zwei Lösungen links und rechts; Auswahl per Klick, Touch, ← / →. Fertig, wenn: M-04 bis M-07 bestanden.
-- [ ] **T16 Animationen.** Richtig: Figur weicht zur gewählten Seite aus, fährt vorbei, übernimmt die neue Zahl. Falsch: Figur stürzt. Fertig, wenn: M-08 bis M-09 bestanden.
-- [ ] **T17 Ergebnisbildschirm.** Punkte, Hinweis ob Bestenliste erreicht, Bestenliste, „Nochmal“. Fertig, wenn: M-10, M-13 und M-15 bestanden.
+- [x] **T11 Bühne im Querformat.** Feste Spielfläche im Seitenverhältnis 16:9, die sich in jedes Fenster einpasst; im Hochformat verkleinert mit Rand. Fertig, wenn: M-01 bis M-03 bestanden.
+- [x] **T12 Grafiken.** Echtes 3D (Three.js): Rakete im Code gebaut, Einhorn und Prinzessin aus CC0-Modellen, je drei Hindernisse pro Thema, Weltraum und Märchenwald als Kulisse; Menübilder aus der 3D-Szene gerendert. Fertig, wenn: alle Grafiken im Repo liegen, auf hellem und dunklem Hintergrund erkennbar sind und M-12 bestanden ist.
+- [x] **T13 Startbildschirm: Name.** Eingabefeld (max. 20 Zeichen), Bestätigen mit Enter oder Schaltfläche, letzter Name vorausgefüllt. Fertig, wenn: M-11 bestanden.
+- [x] **T14 Figurenwahl.** Zwei große Schaltflächen mit Bild. Fertig, wenn: Auswahl per Maus, Touch und Tastatur funktioniert.
+- [x] **T15 Spielszene.** Figur unten mittig mit Zahl, Hindernis kommt von oben und hält an, Aufgabe davor, zwei Lösungen links und rechts; Auswahl per Klick, Touch, ← / →. Fertig, wenn: M-04 bis M-07 bestanden.
+- [x] **T16 Animationen.** Richtig: Figur weicht zur gewählten Seite aus, fährt vorbei, übernimmt die neue Zahl. Falsch: Figur stürzt. Fertig, wenn: M-08 bis M-09 bestanden.
+- [x] **T17 Ergebnisbildschirm.** Punkte, Hinweis ob Bestenliste erreicht, Bestenliste, „Nochmal“. Fertig, wenn: M-10, M-13 und M-15 bestanden.
 
 ## Phase 4: Veröffentlichen
 

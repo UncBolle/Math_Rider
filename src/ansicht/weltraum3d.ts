@@ -362,7 +362,7 @@ function baueRakete() {
   wurzel.add(halter);
 
   const zahlPunkt = new THREE.Object3D();
-  zahlPunkt.position.set(0, 0.55, -1.2);
+  zahlPunkt.position.set(0, 0.4, -0.2);
   halter.add(zahlPunkt);
 
   return {
